@@ -1,0 +1,558 @@
+
+
+
+/* =========================
+   Main Container
+========================= */
+.brand-container {
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* =========================
+   Brand Titles
+========================= */
+.brand {
+  font-size: 50px;
+  font-weight: 700;
+  color: #1d1d1f;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+}
+
+.brand:hover {
+  color: #0071e3;
+  transform: scale(1.1);
+}
+
+.brand.disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* =========================
+   Back Button
+========================= */
+.back-btn {
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #555;
+}
+
+/* =========================
+   Product Grid
+========================= */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+.phone-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.phone-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.grid-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.grid-img:hover {
+  transform: scale(1.05);
+}
+
+.phone-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #1d1d1f;
+}
+
+.phone-card p {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #0071e3;
+}
+
+.buy-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #0071e3;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buy-btn:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   Hero Slider
+========================= */
+.hero {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+  position: relative;
+}
+
+.hero-track {
+  display: flex;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+}
+
+.hero-slide {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+}
+
+.hero-text {
+  max-width: 40%;
+}
+
+.hero-text h1 {
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-text h2 {
+  font-size: 42px;
+  font-weight: 600;
+  background: linear-gradient(90deg, #00d2ff, #ff4ecd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+  margin-top: 20px;
+  font-size: 18px;
+  opacity: 0.85;
+}
+
+.hero-media {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-media img,
+.hero-media video {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Hero slider controls */
+.controls {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.controls button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.controls button:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 1024px) {
+  .hero-slide {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero-text, .hero-media {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand {
+    font-size: 40px;
+  }
+  .grid-img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand {
+    font-size: 32px;
+  }
+  .grid-img {
+    height: 200px;
+  }
+  .buy-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .controls button {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+}
+
+
+/* Transparent overlay form */
+.registration-form {
+  position: fixed; /* stays on top of everything */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9); /* white with transparency */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000; /* ensures it appears above everything */
+}
+
+/* Dark overlay behind the form */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* dim background */
+  z-index: 999; /* behind the form */
+}
+
+/* Form inputs */
+.registration-form input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* slightly transparent inputs */
+}
+
+/* Submit and Cancel buttons */
+.registration-form .button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.registration-form .button-group .buy-btn {
+  flex: 1;
+}
+
+.registration-form .button-group .cancel-btn {
+  background-color: #aaa;
+}
+
+.registration-form .button-group .cancel-btn:hover {
+  background-color: #888;
+}
+
+.footer {
+  background-color: #1a1a1a;       /* Dark background */
+  color: #fff;                     /* White text */
+  text-align: center;              /* Centered text */
+  padding: 20px 10px;              /* Vertical and horizontal padding */
+  font-size: 16px;                 /* Font size */
+  letter-spacing: 0.5px;           /* Slight spacing between letters */
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.3); /* Subtle shadow on top */
+  position: relative;              /* For positioning if needed */
+}
+
+.footer h3 {
+  margin: 0;                       /* Remove default margin */
+  font-weight: 400;                /* Normal weight */
+  font-family: 'Arial', sans-serif;
+}
+
+.footer a {
+  color: #00aaff;                  /* Optional link color */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;      /* Hover effect */
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: linear-gradient(90deg, #1a73e8, #00c6ff); /* Gradient background */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Brand text */
+.navbar-brand-text {
+  font-size: 24px;                 
+  font-weight: 700;                
+  color: #ffffff;                  
+  letter-spacing: 2px;             
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  text-transform: uppercase;       
+  transition: all 0.3s ease;     
+  cursor: pointer;
+  position: relative;
+}
+
+/* Stylish hover effect */
+.navbar-brand-text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 3px;
+  background-color: #00ffe0;  /* underline highlight */
+  transition: width 0.3s ease;
+}
+
+.navbar-brand-text:hover::after {
+  width: 100%;
+}
+
+.navbar-brand-text:hover {
+  color: #00ffe0; /* Text highlight on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Navbar links */
+.navbar-links {
+  display: flex;
+  gap: 25px;
+}
+
+.navbar-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #00ffe0;
+  transform: scale(1.1);
+}
+
+/* Responsive Hamburger */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.navbar-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    background: #1a73e8;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+}
+.navbar-stylish {
+  background: linear-gradient(90deg, #1a73e8, #00c6ff);
+  padding: 15px 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-logo {
+  margin-right: 15px;
+}
+
+.s-logo {
+  font-size: 32px;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 
+    2px 2px 0 #000, 
+    4px 4px 0 #555, 
+    6px 6px 5px rgba(0,0,0,0.4);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transform: rotateY(10deg) rotateX(5deg); /* gives slight 3D perspective */
+}
+
+.navbar-brand-text {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-brand-text:hover {
+  color: #00ffe0;
+  transform: scale(1.05);
+}
+
+/* Optional: Style nav links */
+.navbar-nav .nav-link {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #00ffe0;
+}
+
+
+/* Navbar background and styling */
+.navbar-stylish {
+  background: linear-gradient(90deg, #1a73e8, #00c6ff);
+  padding: 15px 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 3D logo text */
+.s-logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 
+    2px 2px 0 #000, 
+    4px 4px 0 #555, 
+    6px 6px 5px rgba(0,0,0,0.4);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+
+/* Navbar links container spacing */
+.navbar-nav {
+  display: flex;
+  gap: 30px; /* Space between links */
+}
+
+/* Navbar links font and hover effect */
+.navbar-nav .nav-link {
+  font-size: 18px;   /* Bigger font */
+  font-weight: 600;
+  color: #fff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #00ffe0;
+  transform: scale(1.1);
+}
+
+/* Dropdown items bigger font */
+.navbar-nav .dropdown-menu .dropdown-item {
+  font-size: 16px;
+}
+
+/* Disabled link */
+.navbar-nav .nav-link.disabled {
+  color: #ccc !important;
+}
+
+/* Optional: Search box styling */
+.form-control {
+  border-radius: 20px;
+}
+
+.btn-outline-success {
+  border-radius: 20px;
+  font-weight: 600;
+}
